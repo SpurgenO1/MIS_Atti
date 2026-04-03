@@ -1,0 +1,15 @@
+export const INITIATIVE_FILTERS = [
+  { id: "*", label: "Show All" },
+  { id: "cat-1", label: "Accessibility" },
+  { id: "cat-2", label: "Arts & Culture" },
+  { id: "cat-3", label: "Climate Change" },
+  { id: "cat-4", label: "Entrepreneurship & Innovation" },
+  { id: "cat-5", label: "Health" },
+  { id: "cat-6", label: "Masoom" },
+  { id: "cat-7", label: "Membership Engagement" },
+  { id: "cat-8", label: "Projects" },
+  { id: "cat-9", label: "Road Safety" },
+  { id: "cat-10", label: "Rural Initiative" },
+  { id: "cat-11", label: "Sports" },
+  { id: "cat-12", label: "Others" },
+]
