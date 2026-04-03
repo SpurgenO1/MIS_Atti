@@ -1,0 +1,44 @@
+/* Theme + utilities only (no preflight) so legacy Pixlab CSS matches production */
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@theme {
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --color-brand-50: #f4f3ff;
+  --color-brand-100: #ebe9ff;
+  --color-brand-500: #6c63ff;
+  --color-brand-600: #5956e9;
+  --color-brand-700: #4744c5;
+  --color-ink: #0f0d1a;
+  --color-muted: #5c5668;
+  --color-surface: #f8f7fc;
+  --shadow-soft: 0 18px 50px -24px rgb(15 13 26 / 0.18);
+  --shadow-card: 0 4px 24px -8px rgb(15 13 26 / 0.12);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Let template CSS own body; only ensure app root fills viewport */
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Legacy template + injected HTML (StaticHtmlPage) */
+.legacy-content img,
+.legacy-content video {
+  max-width: 100%;
+  height: auto;
+}
+
+.legacy-content a {
+  color: var(--color-brand-600, #5956e9);
+}
