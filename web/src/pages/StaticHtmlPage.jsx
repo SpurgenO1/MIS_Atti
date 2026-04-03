@@ -1,60 +1,36 @@
-import { memo, useEffect, useState } from "react"
-import {
-  extractTitle,
-  fetchLegacyPage,
-  prepareLegacyBody,
-} from "../utils/legacyHtml.js"
+import { memo, useLayoutEffect, useMemo } from "react"
+import { getLegacyRender } from "../utils/legacyHtml.js"
 
 function StaticHtmlPage({ filename }) {
-  const [html, setHtml] = useState("")
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const page = useMemo(() => getLegacyRender(filename), [filename])
 
-  useEffect(() => {
-    let cancelled = false
-    setLoading(true)
-    setError(null)
-    ;(async () => {
-      try {
-        const raw = await fetchLegacyPage(filename)
-        if (cancelled) return
-        document.title = extractTitle(raw)
-        setHtml(prepareLegacyBody(raw))
-      } catch (e) {
-        if (!cancelled) setError(e.message || "Could not load page")
-      } finally {
-        if (!cancelled) setLoading(false)
-      }
-    })()
-    return () => {
-      cancelled = true
-    }
-  }, [filename])
+  useLayoutEffect(() => {
+    if (page?.title) document.title = page.title
+  }, [page])
 
-  if (loading) {
+  if (!page) {
     return (
-      <main className="flex min-h-[50vh] flex-col items-center justify-center gap-4 px-4">
-        <div
-          className="h-10 w-10 animate-spin rounded-full border-2 border-brand-200 border-t-brand-600"
-          aria-hidden
-        />
-        <p className="text-sm text-muted">Loading…</p>
+      <main className="mx-auto max-w-2xl px-4 py-20 text-center">
+        <p className="text-red-600">Page not found</p>
       </main>
     )
   }
 
-  if (error) {
+  if (page.mode === "iframe") {
     return (
-      <main className="mx-auto max-w-2xl px-4 py-20 text-center">
-        <p className="text-red-600">{error}</p>
-      </main>
+      <iframe
+        title={page.title}
+        className="legacy-iframe block min-h-[90vh] w-full border-0"
+        srcDoc={page.html}
+        sandbox="allow-scripts allow-same-origin allow-popups"
+      />
     )
   }
 
   return (
     <main
       className="legacy-content min-h-[40vh] w-full overflow-x-auto"
-      dangerouslySetInnerHTML={{ __html: html }}
+      dangerouslySetInnerHTML={{ __html: page.html }}
     />
   )
 }

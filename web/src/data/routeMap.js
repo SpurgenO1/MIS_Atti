@@ -1,4 +1,4 @@
-/** Map static HTML filenames (as deployed under /site/) to in-app routes */
+/** Map legacy HTML filenames (keys in generated legacy content) to in-app routes */
 export const htmlFileToRoute = {
   "index.html": "/",
   "about.html": "/about",

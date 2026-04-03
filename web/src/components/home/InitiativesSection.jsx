@@ -6,13 +6,16 @@ import InitiativeCard from "./InitiativeCard.jsx"
 
 const allItems = [...portfolioItems, ...extraEventPages]
 
-function InitiativesSection({ id = "initiatives", showIntro = true }) {
+function InitiativesSection({ id = "initiatives", showIntro = true, excludeSlugs = null }) {
   const [filter, setFilter] = useState("*")
 
   const filtered = useMemo(() => {
-    if (filter === "*") return allItems
-    return allItems.filter((item) => item.categories?.includes(filter))
-  }, [filter])
+    let list = filter === "*" ? allItems : allItems.filter((item) => item.categories?.includes(filter))
+    if (excludeSlugs?.size) {
+      list = list.filter((item) => !excludeSlugs.has(item.slug))
+    }
+    return list
+  }, [filter, excludeSlugs])
 
   return (
     <section className="portfolio-area portfolio-area-v1 light-gray-bg pt-130 pb-70" id={id}>
