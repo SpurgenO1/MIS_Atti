@@ -114,6 +114,7 @@ function buildTeamIframeDocument(mainHtml, headExtraCss, inlineScript, maps) {
     "/assets/css/default.css",
     "/assets/css/style.css",
     "/assets/css/responsive.css",
+    "/assets/css/yuva-anime-badges.css",
     "https://fonts.googleapis.com/css?family=Poppins:400,500,600",
     "/assets/fonts/fontawesome/css/all.min.css",
     "/assets/fonts/flaticon/flaticon.css",
