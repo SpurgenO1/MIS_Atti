@@ -1,9 +1,11 @@
 import { memo, useCallback, useEffect, useState } from "react"
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useLocation } from "react-router-dom"
 
 const navCls = ({ isActive }) => `nav-link${isActive ? " active" : ""}`
 
 function Navbar({ onOpenPanel }) {
+  const { pathname } = useLocation()
+  const heroTransparentHeader = pathname === "/"
   const [menuOn, setMenuOn] = useState(false)
   const [whoOpen, setWhoOpen] = useState(false)
   const [sticky, setSticky] = useState(false)
@@ -28,7 +30,11 @@ function Navbar({ onOpenPanel }) {
   }, [menuOn])
 
   return (
-    <header className="theme-header transparent-header">
+    <header
+      className={
+        heroTransparentHeader ? "theme-header transparent-header" : "theme-header shell-header-solid"
+      }
+    >
       <div className={`header-navigation navigation-style-v1${sticky ? " sticky" : ""}`}>
         <button
           type="button"

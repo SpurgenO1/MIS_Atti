@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <!--====== Responsive css ======-->
         <link rel="stylesheet" href="assets/css/responsive.css">
+        <link rel="stylesheet" href="assets/css/yuva-anime-badges.css">
     </head>
     <style>
         body {
@@ -106,6 +107,47 @@
 
     .team-item:hover .img-text {
       opacity: 1;
+    }
+
+    /* LinkedIn badge — top-right on member photo (council & board) */
+    .team-area .team-item .img-holder {
+      position: relative;
+    }
+    .team-item-linkedin {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 4;
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      color: #0a66c2;
+      text-decoration: none;
+      line-height: 1;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    .team-item-linkedin:hover {
+      background: #0a66c2;
+      color: #fff;
+      transform: scale(1.05);
+    }
+    .team-item-linkedin .fab {
+      font-size: 18px;
+    }
+    .team-item-linkedin--muted {
+      opacity: 0.38;
+      pointer-events: none;
+      cursor: default;
+    }
+    .team-item-linkedin--muted:hover {
+      background: #fff;
+      color: #0a66c2;
+      transform: none;
     }
 
     </style>
@@ -237,6 +279,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Nandhini R.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/n-andhini-r" target="_blank" rel="noopener noreferrer" aria-label="Nandhini R on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 <h4><p><br>Nandhini R</p></h4>
@@ -248,6 +291,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/team/sai sendhil.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/sai-senthil-987977321" target="_blank" rel="noopener noreferrer" aria-label="Sai Senthil M on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 <h4><p><br>Sai Senthil M</p></h4>
@@ -259,6 +303,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Nandhini R K.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/nandhinirk" target="_blank" rel="noopener noreferrer" aria-label="Nandhini R K on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                
@@ -271,6 +316,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Maanasa Shree K.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -283,6 +329,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Rishi Karthick P.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/rishi-karthick-p-a06183376" target="_blank" rel="noopener noreferrer" aria-label="Rishi Karthick P on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                
@@ -295,6 +342,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Dinesh B.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/dineshx29" target="_blank" rel="noopener noreferrer" aria-label="Dinesh B on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 
@@ -307,6 +355,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Mythreiy Anand.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/mythreiy-anand-184935257" target="_blank" rel="noopener noreferrer" aria-label="Mythreiy Anand on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 
@@ -319,6 +368,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Nithish Shanmugavadivel.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -332,6 +382,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Abraham Samuel E.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/abraham-samuel-e" target="_blank" rel="noopener noreferrer" aria-label="Abraham Samuel E on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 
@@ -344,6 +395,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Rino Calvin B.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/rinocalvin" target="_blank" rel="noopener noreferrer" aria-label="Rino Calvin B on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 
@@ -358,6 +410,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Vishnu Venkateswaran.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/vishnu-venkateswaran" target="_blank" rel="noopener noreferrer" aria-label="Vishnu Venkateswaran on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 
@@ -370,6 +423,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Preshant S B.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn currently unavailable"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -383,6 +437,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Srinidhi D.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/srinidhi-dhamodaran" target="_blank" rel="noopener noreferrer" aria-label="Srinidhi D on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                
@@ -395,6 +450,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Prathisha R.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn currently unavailable"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -407,6 +463,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Andrew Jenitton X.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/andrewjenittonx" target="_blank" rel="noopener noreferrer" aria-label="Andrew Jenitton X on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 
@@ -419,6 +476,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Gangika Prakash.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn currently unavailable"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                
@@ -431,6 +489,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Anirudhh S.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/anirudhh-srinivasan" target="_blank" rel="noopener noreferrer" aria-label="Anirudhh S on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 
@@ -443,6 +502,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Nivedha Maria Newton.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/nivedha-maria-newton-5b24092a2" target="_blank" rel="noopener noreferrer" aria-label="Nivedha Maria Newton on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                
@@ -455,6 +515,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Vasanth B.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/vasanthb76" target="_blank" rel="noopener noreferrer" aria-label="Vasanth B on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                
@@ -467,6 +528,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Kaavya Diwakar.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/kaavya-diwakar-136771288" target="_blank" rel="noopener noreferrer" aria-label="Kaavya Diwakar on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 
@@ -479,6 +541,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Rithika Babu.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn currently unavailable"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                
@@ -491,6 +554,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Navajeeth M.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -503,11 +567,12 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Mohitha Goutham.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/mohitha-goutham-0753b52a2" target="_blank" rel="noopener noreferrer" aria-label="Mohitha Goutham on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                
                                 <h4><a><br>Mohitha Goutham</a></h4>
-                                <p class="position">Communication Head<Head></Head></p>
+                                <p class="position">Communication Head</p>
                             </div>
                         </div>
                     </div>
@@ -516,6 +581,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Supraja R.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/supraja-rangarajan-6a84092a2" target="_blank" rel="noopener noreferrer" aria-label="Supraja R on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 <h4><a><br>Supraja R</a></h4>
@@ -527,6 +593,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Mariyah Joshna.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/mariyah-joshna-7189292a2" target="_blank" rel="noopener noreferrer" aria-label="Mariyah Joshna on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 <h4><a><br>Mariyah Joshna</a></h4>
@@ -539,6 +606,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Dinesh B.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/dineshx29" target="_blank" rel="noopener noreferrer" aria-label="Dinesh B on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 <h4><a><br>Dinesh B</a></h4>
@@ -550,6 +618,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Sri Harini M.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/m-sri-harini-7505a1292" target="_blank" rel="noopener noreferrer" aria-label="Sri Harini M on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 <h4><a><br>Sri Harini M</a></h4>
@@ -561,6 +630,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Council2025/Preshant S B.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn currently unavailable"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 <h4><a><br>Preshant S B</a></h4>
@@ -576,6 +646,7 @@
         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
             <div class="img-holder">
                 <img src="assets/images/Council2025/Mohammed Hashikh T.png" alt="">
+                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn currently unavailable"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
             </div>
             <div class="text text-center">
                 <h4><a><br>Mohammed Hashikh T</a></h4>
@@ -588,6 +659,7 @@
         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
             <div class="img-holder">
                 <img src="assets/images/Council2025/Prathisha R.png" alt="">
+                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn currently unavailable"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
             </div>
             <div class="text text-center">
                 <h4><a><br>Prathisha R</a></h4>
@@ -600,6 +672,7 @@
         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
             <div class="img-holder">
                 <img src="assets/images/Council2025/Andrew Jenitton X.png" alt="">
+                <a class="team-item-linkedin" href="https://www.linkedin.com/in/andrewjenittonx" target="_blank" rel="noopener noreferrer" aria-label="Andrew Jenitton X on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
             </div>
             <div class="text text-center">
                 <h4><a><br>Andrew Jenitton X</a></h4>
@@ -646,6 +719,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Ananya P.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 <ul class="social-link">
@@ -659,6 +733,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Harshith R.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -671,6 +746,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Krishnapriyabala J S.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                
@@ -683,6 +759,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Samyuktha Subramanian.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 <h4><a><br>Samyuktha Subramanian</a></h4>
@@ -694,6 +771,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Adithtya K.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -706,6 +784,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Anisha S.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -718,6 +797,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Dhanesh S K.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -730,6 +810,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Harishraj J.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -742,6 +823,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Pavithra S.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -754,6 +836,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Ishrath Sheriff M.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -766,6 +849,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Vrithishree V J.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -778,6 +862,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Varshine M.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -790,6 +875,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Yashikadevi S K.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -802,6 +888,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Alamelu Mangai L.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -814,6 +901,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Puja P.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                
@@ -826,6 +914,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Sadhvi R.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -838,6 +927,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Harsidha G S.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/harsidha-gs-34b223318" target="_blank" rel="noopener noreferrer" aria-label="Harsidha G S on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                
@@ -850,6 +940,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Nandhini V S.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/nandhini-vs" target="_blank" rel="noopener noreferrer" aria-label="Nandhini V S on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
 
@@ -864,6 +955,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Soundaryaa Boopesh.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/soundaryaa-boopesh-bb039532b" target="_blank" rel="noopener noreferrer" aria-label="Soundaryaa Boopesh on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
                                 
@@ -876,6 +968,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Spurgen A.png" alt="">
+                                <a class="team-item-linkedin" href="https://www.linkedin.com/in/spurgen" target="_blank" rel="noopener noreferrer" aria-label="Spurgen A on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                             </div>
                             <div class="text text-center">
 
@@ -888,6 +981,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Pranow S.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -900,6 +994,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".20s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Rithik Priyan.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -912,6 +1007,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".25s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Rithika D.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -924,6 +1020,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Vaishnavi G.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -936,6 +1033,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Mukesh S.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -948,6 +1046,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Ritesh S.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -960,6 +1059,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Sanskrithi K S.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -972,6 +1072,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Charan Karthikeyan.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -984,6 +1085,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Harivarsha S.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -996,6 +1098,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Rakesh R.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
                                 
@@ -1008,6 +1111,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Tharun S.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -1020,6 +1124,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Malar Varshini G.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 
@@ -1032,6 +1137,7 @@
                         <div class="team-item mb-55 wow fadeInUp" data-wow-delay=".15s">
                             <div class="img-holder">
                                 <img src="assets/images/Boards2025/Yuvanesh J.png" alt="">
+                                <span class="team-item-linkedin team-item-linkedin--muted" title="LinkedIn coming soon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                             </div>
                             <div class="text text-center">
 

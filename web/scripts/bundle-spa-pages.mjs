@@ -64,13 +64,6 @@ function extractMainColumn(html) {
   return html.slice(start, end)
 }
 
-function extractFirstStyleBlock(html) {
-  const bodyIdx = html.search(/<body[\s>]/i)
-  const headPart = bodyIdx === -1 ? html : html.slice(0, bodyIdx)
-  const m = headPart.match(/<style[^>]*>([\s\S]*?)<\/style>/i)
-  return m ? m[1].trim() : ""
-}
-
 function extractAchievementsHeadStyle(html) {
   const m = html.match(/<style[^>]*>([\s\S]*?#overlay[\s\S]*?)<\/style>/i)
   return m ? m[1].trim() : ""
@@ -94,68 +87,37 @@ const closeBtn = document.querySelector(".close-btn");
   return prefix + inner
 }
 
+/** Full team.html (same as static GitHub Pages) for a standalone iframe: header, banner, content, template footer, one scroll. */
+function swapTeamBodyInlineScript(html, teamRawForExtract) {
+  const sanitized = extractTeamInlineScript(teamRawForExtract)
+  if (!sanitized) return html
+  const safe = sanitized.replace(/<\/script/gi, "<\\/script")
+  return html.replace(
+    /<script>\s*const\s+overlay\s*=\s*document\.getElementById\(\s*['"]overlay['"]\s*\)\s*;[\s\S]*?<\/script>/i,
+    `<script>${safe}</script>`
+  )
+}
+
+function buildFullTeamIframeDocument(teamRaw, maps) {
+  let html = rewriteLinks(
+    teamRaw,
+    maps.portfolioItems,
+    maps.extraEventPages,
+    maps.htmlFileToRoute
+  )
+  html = addTopTargetToInternalLinks(html)
+  if (!/<base\s+href/i.test(html)) {
+    html = html.replace(/<head([^>]*)>/i, `<head$1><base href="/"/>`)
+  }
+  html = swapTeamBodyInlineScript(html, teamRaw)
+  return html
+}
+
 function addTopTargetToInternalLinks(html) {
   return html.replace(/<a(\s[^>]*?)href="(\/[^"]*)"/gi, (full, pre, href) => {
     if (/target\s*=/i.test(pre)) return full
     return `<a${pre}target="_top" href="${href}"`
   })
-}
-
-function buildTeamIframeDocument(mainHtml, headExtraCss, inlineScript, maps) {
-  let core = rewriteLinks(mainHtml, maps.portfolioItems, maps.extraEventPages, maps.htmlFileToRoute)
-  core = addTopTargetToInternalLinks(core)
-  const body =
-    `<div id="header-area" style="display:none" aria-hidden="true"></div>` +
-    `<div id="footer-area" style="display:none" aria-hidden="true"></div>` +
-    core
-
-  const links = [
-    "/assets/vendor/bootstrap/css/bootstrap.min.css",
-    "/assets/css/default.css",
-    "/assets/css/style.css",
-    "/assets/css/responsive.css",
-    "/assets/css/yuva-anime-badges.css",
-    "https://fonts.googleapis.com/css?family=Poppins:400,500,600",
-    "/assets/fonts/fontawesome/css/all.min.css",
-    "/assets/fonts/flaticon/flaticon.css",
-  ]
-  const linkTags = links
-    .map((h) =>
-      h.startsWith("http")
-        ? `<link rel="stylesheet" href="${h}" crossorigin="anonymous"/>`
-        : `<link rel="stylesheet" href="${h}"/>`
-    )
-    .join("\n")
-
-  const scripts = [
-    "/assets/vendor/jquery-3.6.0.min.js",
-    "/assets/vendor/popper/popper.min.js",
-    "/assets/vendor/bootstrap/js/bootstrap.min.js",
-    "/assets/vendor/slick/slick.min.js",
-    "/assets/vendor/magnific-popup/dist/jquery.magnific-popup.min.js",
-    "/assets/vendor/isotope.min.js",
-    "/assets/vendor/imagesloaded.min.js",
-    "/assets/vendor/jquery.counterup.min.js",
-    "/assets/vendor/jquery.waypoints.js",
-    "/assets/vendor/nice-select/js/jquery.nice-select.min.js",
-    "/assets/vendor/wow.min.js",
-    "/assets/vendor/parallax.min.js",
-    "/assets/js/theme.js",
-  ]
-  const scriptTags = scripts.map((s) => `<script src="${s}"></script>`).join("\n")
-
-  const safeInline = inlineScript
-    .replace(/<\/script/gi, "<\\/script")
-    .replace(/\bon\w+=/gi, (m) => m)
-
-  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><base href="/"/>
-${linkTags}
-<style>${headExtraCss.replace(/<\/style/gi, "<\\/style")}</style>
-</head><body>
-${body}
-${scriptTags}
-<script>${safeInline}</script>
-</body></html>`
 }
 
 async function main() {
@@ -198,10 +160,7 @@ async function main() {
     maps.htmlFileToRoute
   )
 
-  const teamMain = extractMainColumn(teamRaw)
-  const teamHeadCss = extractFirstStyleBlock(teamRaw)
-  const teamInline = extractTeamInlineScript(teamRaw)
-  const teamIframeSrcDoc = buildTeamIframeDocument(teamMain, teamHeadCss, teamInline, maps)
+  const teamIframeSrcDoc = buildFullTeamIframeDocument(teamRaw, maps)
 
   const accoladesExtraCss = extractAchievementsHeadStyle(achievementsRaw)
 
@@ -234,7 +193,7 @@ export const spaTeamIframeSrcDoc = ${JSON.stringify(payload.teamIframeSrcDoc)};
 export const spaPageTitles = ${JSON.stringify(payload.titles)};
 `
   )
-  console.error("wrote spaPageBundles.js (about, verticals, gallery, accolades, team iframe)")
+  console.error("wrote spaPageBundles.js (about, verticals, gallery, accolades, full team iframe)")
 }
 
 main().catch((e) => {

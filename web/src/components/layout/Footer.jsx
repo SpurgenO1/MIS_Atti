@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 function Footer() {
   return (
-    <footer className="footer-area page-footer light-gray-bg mt-auto">
+    <footer className="app-shell-footer footer-area page-footer light-gray-bg mt-auto">
       <div className="container">
         <div className="footer-widget pt-70 pb-40">
           <div className="row">

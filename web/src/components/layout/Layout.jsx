@@ -25,7 +25,7 @@ function Layout() {
       <AnimatePresence mode="wait">
         <motion.div
           key={location.pathname + location.search}
-          className="flex-1 w-full"
+          className="app-shell-main flex min-h-0 flex-1 w-full flex-col"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -12 }}

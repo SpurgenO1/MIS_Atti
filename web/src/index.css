@@ -42,3 +42,33 @@
 .legacy-content a {
   color: var(--color-brand-600, #5956e9);
 }
+
+/*
+  Inner routes: hero overlay header would sit on top of iframe content and not reserve layout height.
+  Solid header stays in normal flow with a white bar (window scroll on /team stays ~0, so sticky rarely applies).
+*/
+.theme-header.shell-header-solid {
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+}
+
+.theme-header.shell-header-solid .header-navigation {
+  position: relative;
+  background-color: #fff;
+}
+
+/*
+  Legacy .page-footer sets z-index: 1; Framer Motion’s transformed main creates a stacking context at auto (0),
+  so the footer could paint over the team iframe. Keep main above the shell footer.
+*/
+.app-shell-main {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-area.page-footer.app-shell-footer {
+  z-index: 0;
+  flex-shrink: 0;
+}

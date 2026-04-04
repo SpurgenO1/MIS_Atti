@@ -42,6 +42,7 @@ function AppRoutes() {
     <>
       <ScrollToTop />
       <Routes>
+        <Route path="/team" element={<TeamSpaPage />} />
         <Route element={<Layout />}>
           <Route
             path="/"
@@ -55,7 +56,6 @@ function AppRoutes() {
           <Route path="/initiatives" element={<InitiativesPage />} />
           <Route path="/events/:slug" element={<EventDetailPage />} />
           <Route path="/about" element={<AboutUsPage />} />
-          <Route path="/team" element={<TeamSpaPage />} />
           <Route path="/gallery" element={<GallerySpaPage />} />
           <Route path="/verticals" element={<VerticalsSpaPage />} />
           <Route path="/accolades" element={<AccoladesSpaPage />} />
