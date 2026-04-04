@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build:legacy": "node scripts/build-legacy-content.mjs",
-    "prebuild": "node scripts/build-legacy-content.mjs",
+    "build:spa": "node scripts/bundle-spa-pages.mjs",
+    "prebuild": "node scripts/bundle-spa-pages.mjs && node scripts/build-legacy-content.mjs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

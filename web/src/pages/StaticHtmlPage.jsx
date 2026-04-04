@@ -1,11 +1,34 @@
-import { memo, useLayoutEffect, useMemo } from "react"
+import { memo, useLayoutEffect, useMemo, useEffect, useRef } from "react"
 import { getLegacyRender } from "../utils/legacyHtml.js"
+import { ensureWowInitialized, refreshWowForContainer } from "../utils/wowSpa.js"
 
 function StaticHtmlPage({ filename }) {
   const page = useMemo(() => getLegacyRender(filename), [filename])
+  const mainRef = useRef(null)
 
   useLayoutEffect(() => {
     if (page?.title) document.title = page.title
+  }, [page])
+
+  useEffect(() => {
+    if (!page || page.mode !== "body") return undefined
+    const root = mainRef.current
+    if (!root) return undefined
+    let alive = true
+    const id = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (!alive) return
+        ensureWowInitialized()
+          .then(() => {
+            if (alive) refreshWowForContainer(root)
+          })
+          .catch(() => {})
+      })
+    })
+    return () => {
+      alive = false
+      cancelAnimationFrame(id)
+    }
   }, [page])
 
   if (!page) {
@@ -29,6 +52,7 @@ function StaticHtmlPage({ filename }) {
 
   return (
     <main
+      ref={mainRef}
       className="legacy-content min-h-[40vh] w-full overflow-x-auto"
       dangerouslySetInnerHTML={{ __html: page.html }}
     />

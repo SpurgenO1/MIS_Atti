@@ -1,33 +1,6 @@
 import { memo, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
-
-function loadParallaxScript() {
-  return new Promise((resolve, reject) => {
-    if (typeof window !== "undefined" && window.Parallax) {
-      resolve()
-      return
-    }
-    const existing = document.querySelector("script[data-parallax-lib]")
-    if (existing) {
-      if (window.Parallax) {
-        resolve()
-        return
-      }
-      existing.addEventListener("load", () => resolve(), { once: true })
-      existing.addEventListener("error", () => reject(new Error("Parallax script failed")), {
-        once: true,
-      })
-      return
-    }
-    const s = document.createElement("script")
-    s.src = "/assets/vendor/parallax.min.js"
-    s.async = true
-    s.dataset.parallaxLib = "1"
-    s.onload = () => resolve()
-    s.onerror = () => reject(new Error("Parallax script failed"))
-    document.body.appendChild(s)
-  })
-}
+import { loadParallaxScript } from "../../utils/parallaxScenes.js"
 
 function HeroSection() {
   const sectionRef = useRef(null)
