@@ -1987,8 +1987,13 @@ button {
     border-radius: 10px;
 }
 .portfolio-style-two .img-holder img,
-.portfolio-style-one .img-holder img{
+.portfolio-style-one .img-holder img,
+.portfolio-style-two .img-holder video,
+.portfolio-style-one .img-holder video{
     width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 .portfolio-style-one .img-holder .portfolio-hover{
     position: absolute;
@@ -2023,6 +2028,11 @@ button {
 .portfolio-style-one .img-holder .portfolio-hover .hover-content i{
     color: #fff;
     font-size: 34px;
+}
+.portfolio-style-one .img-holder .portfolio-hover .hover-content h4{
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
 }
 .portfolio-style-one .text{
     padding-top: 30px;

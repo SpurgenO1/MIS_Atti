@@ -12,10 +12,39 @@ import VerticalsSpaPage from "./pages/VerticalsSpaPage.jsx"
 import AccoladesSpaPage from "./pages/AccoladesSpaPage.jsx"
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   useLayoutEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    if (!hash) {
+      window.scrollTo(0, 0)
+      return undefined
+    }
+
+    const targetId = decodeURIComponent(hash.slice(1))
+    let frameId = 0
+    let timeoutId = 0
+    let attempts = 0
+
+    const scrollToHashTarget = () => {
+      const target = document.getElementById(targetId)
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" })
+        return
+      }
+
+      if (attempts >= 20) return
+      attempts += 1
+      frameId = requestAnimationFrame(() => {
+        timeoutId = window.setTimeout(scrollToHashTarget, 50)
+      })
+    }
+
+    scrollToHashTarget()
+
+    return () => {
+      cancelAnimationFrame(frameId)
+      window.clearTimeout(timeoutId)
+    }
+  }, [pathname, hash])
   return null
 }
 
