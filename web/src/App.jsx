@@ -1,4 +1,4 @@
-import { memo, useLayoutEffect } from "react"
+import { memo, useLayoutEffect, useState } from "react"
 import { BrowserRouter, Routes, Route, useLocation, Link } from "react-router-dom"
 import Layout from "./components/layout/Layout.jsx"
 import HomePage from "./pages/HomePage.jsx"
@@ -10,6 +10,7 @@ import TeamSpaPage from "./pages/TeamSpaPage.jsx"
 import GallerySpaPage from "./pages/GallerySpaPage.jsx"
 import VerticalsSpaPage from "./pages/VerticalsSpaPage.jsx"
 import AccoladesSpaPage from "./pages/AccoladesSpaPage.jsx"
+import IntroOverlay from "./components/common/IntroOverlay.jsx"
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -101,10 +102,23 @@ function AppRoutes() {
 }
 
 function App() {
+  const [showIntro, setShowIntro] = useState(() => {
+    // Check if it's the first visit
+    return !localStorage.getItem("introPlayed");
+  });
+
+  const handleIntroComplete = () => {
+    localStorage.setItem("introPlayed", "true");
+    setShowIntro(false);
+  };
+
   return (
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
+    <>
+      {showIntro && <IntroOverlay onComplete={handleIntroComplete} />}
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </>
   )
 }
 
