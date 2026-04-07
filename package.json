@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix web run dev",
+    "build": "npm --prefix web run build",
+    "build:legacy": "npm --prefix web run build:legacy",
+    "lint": "npm --prefix web run lint",
+    "preview": "npm --prefix web run preview"
+  }
+}

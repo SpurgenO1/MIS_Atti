@@ -16,8 +16,8 @@ function RecentEventsSection() {
       <div className="container">
         <div className="row align-items-end mb-45">
           <div className="col-lg-8">
-            <div className="section-title wow fadeInUp">
-              <span className="sub-title st-one">Our Works</span>
+            <div className="section-title works-heading">
+              <span className="sub-title st-one works-kicker">Our Works</span>
               <h2 id="recent-events-heading">Recent Events</h2>
               <p>Highlights from our latest initiatives</p>
             </div>
