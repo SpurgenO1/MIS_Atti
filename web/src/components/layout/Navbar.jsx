@@ -9,13 +9,41 @@ function Navbar({ onOpenPanel }) {
   const [menuOn, setMenuOn] = useState(false)
   const [whoOpen, setWhoOpen] = useState(false)
   const [sticky, setSticky] = useState(false)
+  const [showOnScrollUp, setShowOnScrollUp] = useState(true)
+  const [pointerY, setPointerY] = useState(Number.POSITIVE_INFINITY)
 
   useEffect(() => {
-    const onScroll = () => setSticky(window.scrollY >= 100)
+    let lastY = window.scrollY
+    const onScroll = () => {
+      const currentY = window.scrollY
+      const isSticky = currentY >= 100
+      setSticky(isSticky)
+
+      if (!heroTransparentHeader && isSticky) {
+        setShowOnScrollUp(currentY < lastY || pointerY <= 24)
+      } else {
+        setShowOnScrollUp(true)
+      }
+
+      lastY = currentY
+    }
+
+    const onPointerMove = (event) => {
+      if (heroTransparentHeader) {
+        return
+      }
+
+      setPointerY(event.clientY)
+    }
+
     onScroll()
     window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    window.addEventListener("mousemove", onPointerMove, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("mousemove", onPointerMove)
+    }
+  }, [heroTransparentHeader])
 
   const closeMenu = useCallback(() => {
     setMenuOn(false)
@@ -35,7 +63,11 @@ function Navbar({ onOpenPanel }) {
         heroTransparentHeader ? "theme-header transparent-header" : "theme-header shell-header-solid"
       }
     >
-      <div className={`header-navigation navigation-style-v1${sticky ? " sticky" : ""}`}>
+      <div
+        className={`header-navigation navigation-style-v1${sticky ? " sticky" : ""}${
+          !heroTransparentHeader && sticky && !(showOnScrollUp || pointerY <= 24) ? " scroll-hide" : ""
+        }`}
+      >
         <button
           type="button"
           className={`nav-overlay ${menuOn ? "active" : ""}`}

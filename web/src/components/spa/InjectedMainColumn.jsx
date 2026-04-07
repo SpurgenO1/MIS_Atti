@@ -62,7 +62,7 @@ function InjectedMainColumn({ title, html, afterInject, parallax = true }) {
   return (
     <div
       ref={ref}
-      className="spa-injected-root w-full overflow-x-auto"
+      className="spa-injected-root premium-page-shell w-full overflow-x-auto"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   )
